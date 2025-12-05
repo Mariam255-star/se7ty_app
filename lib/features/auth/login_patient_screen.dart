@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:se7ty_app/core/routes/navigation.dart';
-import 'package:se7ty_app/features/auth/register_patient_screen';
+import 'package:se7ty_app/features/auth/register_patient_screen.dart';
 import 'package:se7ty_app/features/auth/widgets/auth_taxtfield.dart';
 import 'package:se7ty_app/features/auth/widgets/main_button.dart';
 import 'package:se7ty_app/core/utils/colors.dart';

@@ -7,7 +7,8 @@ import 'package:se7ty_app/features/splash/splash_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform
+    ,
   );
   runApp(const MyApp());
 }
