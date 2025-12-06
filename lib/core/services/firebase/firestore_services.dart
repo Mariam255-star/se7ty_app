@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-//import 'package:se7ety/features/patient/booking/data/appointment_model.dart';
+
+import 'package:se7ty_app/features/patient/booking/data/appointment_model.dart';
 
 class FirestoreServices {
   static final CollectionReference _doctorCollection = FirebaseFirestore
@@ -9,9 +10,9 @@ class FirestoreServices {
   static final CollectionReference _appointmentCollection = FirebaseFirestore
       .instance
       .collection('appointment');
-  // static final CollectionReference _patientCollection = FirebaseFirestore
-  //     .instance
-  //     .collection('doctor');
+  static final CollectionReference _patientCollection = FirebaseFirestore
+      .instance
+      .collection('doctor');
 
   static Future<QuerySnapshot> sortDoctorsByRating() {
     return _doctorCollection
@@ -37,9 +38,9 @@ class FirestoreServices {
         .get();
   }
 
-  // static Future<void> createAppointment(AppointmentModel appointment) {
-  //   return _appointmentCollection.doc(appointment.id).set(appointment.toJson());
-  // }
+  static Future<void> createAppointment(AppointmentModel appointment) {
+    return _appointmentCollection.doc(appointment.id).set(appointment.toJson());
+  }
 
   static Future<QuerySnapshot> getAppointmentsByPatientId() {
     String patientId = FirebaseAuth.instance.currentUser!.uid;
